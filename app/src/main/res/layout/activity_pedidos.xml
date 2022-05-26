@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/claro"
+    tools:context=".Pedidos"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textManjaR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manjares Restó"
+        android:textColor="#673AB7"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textSelePed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccione su pedido"
+        android:textSize="20sp" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    <RadioButton
+        android:id="@+id/rbPLlevar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Para llevar"
+        android:onClick="calcular"/>
+
+    <RadioButton
+        android:id="@+id/rbEntDom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrega a domicilio +$100"
+        android:onClick="calcular"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textDesay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desayunos"
+        android:textColor="#3F51B5"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkSanw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sanwiches $240"
+            android:onClick="calcular"/>
+
+        <CheckBox
+            android:id="@+id/checkOmel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Omelettes $150"
+            android:onClick="calcular"/>
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkPanq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pancakes $240"
+                android:onClick="calcular"/>
+
+            <CheckBox
+                android:id="@+id/checkWaff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wafles   $150"
+                android:onClick="calcular"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="206dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtBeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bebidas"
+        android:textColor="#FF5722"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkJugos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jugos $600"
+            android:onClick="calcular"
+            />
+
+        <CheckBox
+            android:id="@+id/checkCafe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Café  $450"
+            android:onClick="calcular"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkLic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Licuados $500"
+            android:onClick="calcular"/>
+
+        <CheckBox
+            android:id="@+id/checkBTe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Té        $200"
+            android:onClick="calcular"/>
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="cancelar"
+            android:text="Cancelar" />
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTotPag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total a Pagar"
+            android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/bDiaHor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elegir Día y Hora de entrega" />
+    </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calendar">
+
+
+    <TextView
+        android:id="@+id/textNombreEvent"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginRight="138dp"
+        android:text="Nombre del evento"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editNombreEvento"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textNombreEvent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="495dp"
+        android:background="#DFDFDF"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:maxLength="100"
+        android:textColor="#757575"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/editTextLocaci"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginRight="164dp"
+        android:maxLength="100"
+        android:text="Locacion"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editTextlocacion"
+        android:layout_width="242dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="373dp"
+        android:background="#DFDFDF"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#757575"
+        android:visibility="visible"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textDescripcion"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextLocaci"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
+        android:text="Descripcion"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editTextDescripcion"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/textDescripcion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="255dp"
+        android:background="#DFDFDF"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:maxLength="100"
+        android:textColor="#757575"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/buttonCrearEvento"
+        android:layout_width="267dp"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="179dp"
+        android:background="#FF5252"
+        android:text="Crear evento"
+        android:textColor="#F5F5F5"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btncerrar"
+        android:layout_width="251dp"
+        android:layout_height="69dp"
+        android:text="Cerrar" />
+
+
+</RelativeLayout>
