@@ -17,6 +17,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -34,6 +36,7 @@ public class Camara extends AppCompatActivity {
     public static final int CAMERA_REQUEST_CODE = 102;
     public static final int GALLERY_REQUEST_CODE = 105;
     ImageView vistaFoto;
+    private View btnShare;
     Button camara;
     Button galeria;
     String currentPhotoPath;
@@ -44,9 +47,24 @@ public class Camara extends AppCompatActivity {
         setContentView(R.layout.activity_camara);
 
         if(getSupportActionBar()!=null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            //Icono
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.drawable.ic_launcher_foreground);
         }
+        btnShare=findViewById(R.id.imageShare);
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent= new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody="#Mirá que rico desayuno";
+                String shareSub="your Subject here";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(myIntent,"Share using"));
+            }
+        });
+
         vistaFoto = findViewById(R.id.imageMostrarFoto);
         camara = findViewById(R.id.tomarFoto);
         galeria = findViewById(R.id.galeria);
@@ -68,6 +86,29 @@ public class Camara extends AppCompatActivity {
                 startActivityForResult(gallery, GALLERY_REQUEST_CODE);
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id= item.getItemId();
+        if (id==R.id.atrás) {
+            Intent intent = new Intent(Camara.this,Menu_Opc.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (id==R.id.salir) {
+            Intent intent = new Intent(Camara.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //camara permisos
@@ -166,15 +207,5 @@ public class Camara extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
             }
         }
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
-        if(item.getItemId()==android.R.id.home){
-
-            finish();
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

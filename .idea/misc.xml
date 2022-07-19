@@ -3,15 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.159" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/drawable/ic_baseline_local_see_24.xml" value="0.159" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.159" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.159" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_calendar.xml" value="0.1" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_camara.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_dia_horario.xml" value="0.25" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_inicio.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_menu_opc.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_pedidos.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_qr.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_qr_pagar.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_qr_pago.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_registro.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/layout/activity_stars.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/usuario/AndroidStudioProjects/Delivery/app/src/main/res/menu/menu.xml" value="0.209375" />
       </map>
     </option>
   </component>

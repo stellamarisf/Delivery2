@@ -1,9 +1,12 @@
 package com.example.delivery;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Stars extends AppCompatActivity {
-    Button btnIrCam,btnCalendario;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,31 +24,14 @@ public class Stars extends AppCompatActivity {
         setContentView(R.layout.activity_stars);
 
         if(getSupportActionBar()!=null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setIcon(R.drawable.ic_launcher_foreground);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         RatingBar mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
         TextView mRatingScale = (TextView) findViewById(R.id.tvRatingScale);
         EditText mFeedback = (EditText) findViewById(R.id.etFeedback);
 
-        btnIrCam=(Button)findViewById(R.id.btnIrCam);
-        btnIrCam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Stars.this, Camara.class);
-                startActivity(intent);
 
-            }
-        });
-        btnCalendario=(Button)findViewById(R.id.btnCalendario);
-        btnCalendario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Stars.this, Calendar.class);
-                startActivity(intent);
-
-            }
-        });
 
         Button mSendFeedback = (Button) findViewById(R.id.btnSubmit);
         mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -93,13 +79,27 @@ public class Stars extends AppCompatActivity {
         });
     }
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
-        if(item.getItemId()==android.R.id.home){
-
-            finish();
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id= item.getItemId();
+        if (id==R.id.atrás) {
+            Intent intent = new Intent(Stars.this,DiaHorario.class);
+            startActivity(intent);
+            return true;
         }
-
+        if (id==R.id.salir) {
+            Intent intent = new Intent(Stars.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

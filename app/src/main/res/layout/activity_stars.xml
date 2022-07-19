@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/claro"
     tools:context=".Stars"
     android:orientation="vertical">
     <TextView
@@ -50,27 +51,38 @@
         android:text="Send feedback"
         android:textColor="#3E2723" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="73dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Comparti con nosotros y mandanos la foto
-         de tu desayuno" />
-
-    <Button
-        android:id="@+id/btnIrCam"
+        android:text="Manjares Restó te agradece!!!!"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/editTextTextPersonName3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ir a la cámara" />
+        android:layout_height="73dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Te espera nuevamente!!!!"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <ImageView
+        android:id="@+id/imageCalendar"
+        android:layout_width="106dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="45dp"
+        app:srcCompat="@drawable/ic_baseline_insert_emoticon_24" />
 
-    <Button
-        android:id="@+id/btnCalendario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ir al Calendario" />
+
+
 
 </LinearLayout>

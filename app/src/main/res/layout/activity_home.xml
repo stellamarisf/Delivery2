@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/claro"
+    android:orientation="vertical"
+    tools:context=".nous.Home">
+
+
+    <CheckBox
+        android:id="@+id/checkMas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu pedido va a estar en una hora"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btnPagar"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gris"
+        android:gravity="center"
+        android:text="Pagar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Programá tu pedido"
+        android:textSize="25sp" />
+
+
+    <Button
+        android:id="@+id/btnSig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gris"
+        android:gravity="center"
+        android:text="siguiente" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tus comentarios nos importa, para mejorar."
+        android:textSize="24sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cuántas estrellas nos darías?"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageStar"
+        android:layout_width="106dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginRight="285dp"
+        android:layout_marginBottom="45dp"
+        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+
+</LinearLayout>

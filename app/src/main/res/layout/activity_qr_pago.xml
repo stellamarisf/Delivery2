@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/claro"
+    tools:context=".nous.QrPagoActivity">
+
+
+    <Button
+        android:id="@+id/btnPago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scanear el Pago"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="249dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="onclick"/>
+
+    <TextView
+        android:id="@+id/tvMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPago"
+        android:text="Mostrar"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+</RelativeLayout>

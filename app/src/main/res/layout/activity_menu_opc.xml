@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/claro"
+    tools:context=".Menu_Opc">
+
+
+    <TextView
+        android:id="@+id/txtGracias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gracias por elegirnos!!!"
+        android:textColor="#673AB7"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/Recibiste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPedido"
+        android:layout_marginTop="138dp"
+        android:text="Recibiste tu desayuno?"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/comentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Recibiste"
+        android:layout_marginTop="50dp"
+        android:text="Dejanos la foto de tu desayuno para nuestra galería y compartí tus dulces momentos"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageCamara"
+        android:layout_width="106dp"
+        android:layout_height="74dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginEnd="289dp"
+        android:layout_marginRight="289dp"
+        android:layout_marginBottom="134dp"
+        app:srcCompat="@drawable/ic_baseline_local_see_24" />
+
+    <TextView
+        android:id="@+id/textInfoCamara"
+        android:layout_width="168dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="89dp"
+        android:layout_marginRight="89dp"
+        android:layout_marginBottom="138dp"
+        android:hint="@+id/textCamara"
+        android:text="Tomar foto"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnPedido"
+        android:layout_width="184dp"
+        android:layout_height="67dp"
+        android:layout_below="@id/txtGracias"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="111dp"
+        android:layout_marginRight="8dp"
+        android:backgroundTint="@color/gris"
+        android:gravity="center"
+        android:text="Hace tu pedido" />
+
+    <Button
+        android:id="@+id/btnCarta"
+        android:layout_width="176dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/txtGracias"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="83dp"
+        android:backgroundTint="@color/gris"
+        android:gravity="center"
+        android:text="Podés ver la Carta" />
+
+
+</RelativeLayout>

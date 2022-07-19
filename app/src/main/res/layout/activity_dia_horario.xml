@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,110 +7,66 @@
     android:background="@color/claro"
     android:orientation="vertical"
     tools:context=".DiaHorario">
-
-    <EditText
-        android:id="@+id/EditFecha"
-        android:layout_width="88dp"
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="21dp"
         android:minHeight="48dp"
-        android:text="Fecha" />
-
-    <EditText
-        android:id="@+id/EditHora"
-        android:layout_width="90dp"
+        android:text="Muchas gracias por comer con nosotros.Te esperamos pronto!! "
+        android:textSize="20sp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/editNombreEvento"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/EditFecha"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="55dp"
-        android:minHeight="48dp"
-        android:text="Hora" />
-
-    <EditText
-        android:id="@+id/txtFecha"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/EditFecha"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="113dp"
-        android:layout_marginTop="21dp"
+        android:text=" Ya estamos preparando tu pedido!! "
         android:ems="10"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/txtHora"
-        android:layout_width="242dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtFecha"
-        android:layout_alignLeft="@id/EditFecha"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="109dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:textSize="20sp"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="309dp"
-        android:layout_height="63dp"
-        android:layout_below="@id/txtHora"
-        android:layout_marginTop="109dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Queres recibir un recordatorio?"
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Querés recibir un recordatorio de tu pedido?"
+        android:textSize="20sp"/>
+
+
+    <ImageView
+        android:id="@+id/imageCalendar"
+        android:layout_width="106dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="45dp"
+        app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tus comentarios nos importa, para mejorar."
+        android:textSize="20sp"
+        android:textStyle="italic" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cuántas estrellas nos darías?"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btnIrCalen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextPersonName4"
-        android:text="Hace click aquí" />
+    <ImageView
+        android:id="@+id/imageStar"
+        android:layout_width="106dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginRight="285dp"
+        android:layout_marginBottom="45dp"
+        app:srcCompat="@drawable/ic_baseline_star_24" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnIrCalen"
-        android:layout_marginTop="0dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Qué calificación y comentarios nos darías"
-        android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btnCali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTextPersonName"
-        android:text="Ir a Calificación" />
-
-    <EditText
-        android:id="@+id/txtShare"
-        android:layout_width="218dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtHora"
-        android:minHeight="48dp"
-        android:text="Querés compartir con?" />
-
-    <Button
-        android:id="@+id/btnShare"
-        android:layout_width="165dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtShare"
-        android:text="Compartir" />
-    <Button
-        android:id="@+id/btnSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnCali"
-        android:text="Salir de la apli" />
-
-</RelativeLayout>
+</LinearLayout>

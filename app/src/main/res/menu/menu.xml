@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Anterior"
+        android:id="@+id/atrás"
+        android:icon="@android:drawable/ic_menu_revert"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:title="Salir"
+        android:id="@+id/salir"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_close_24"
+        />
+
+</menu>

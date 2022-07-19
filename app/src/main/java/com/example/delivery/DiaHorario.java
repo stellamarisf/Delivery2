@@ -1,117 +1,91 @@
 package com.example.delivery;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
-import java.util.Calendar;
-
-public class DiaHorario extends AppCompatActivity implements View.OnClickListener {
-    Button btnIrCalen,btnCali,btnShare,btnSalir;
-    EditText txtFecha,txtHora,EditFecha,EditHora,txtShare;
-    private int dia,mes,anio,hora,minutos;
+public class DiaHorario extends AppCompatActivity  {
+    private View btnstar;
+    private View btncalendar;
+    private TextView titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dia_horario);
         if(getSupportActionBar()!=null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setIcon(R.drawable.ic_launcher_foreground);
         }
-        txtShare=(EditText)findViewById(R.id.txtShare);
-        btnShare=(Button)findViewById(R.id.btnShare);
-        btnSalir=(Button)findViewById(R.id.btnSalir);
-        EditFecha=(EditText) findViewById(R.id.EditFecha);
-        EditHora=(EditText) findViewById(R.id.EditHora);
-        txtFecha=(EditText) findViewById(R.id.txtFecha);
-        txtHora=(EditText) findViewById(R.id.txtHora);
-        btnCali=(Button)findViewById(R.id.btnCali);
-        btnIrCalen=(Button)findViewById(R.id.btnIrCalen);
-        EditFecha.setOnClickListener(this);
-        EditHora.setOnClickListener(this);
-        btnSalir.setOnClickListener(new View.OnClickListener() {
+
+
+        titulo= (TextView) findViewById(R.id.editNombreEvento);
+        btncalendar=findViewById(R.id.imageCalendar);
+        btncalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent();
-                intent.setAction(intent.ACTION_MAIN);
-                intent.addCategory(intent.CATEGORY_HOME);
-                startActivity(intent);
+                if (!titulo.getText().toString().isEmpty() ) {
+                    Intent intent= new Intent(Intent.ACTION_INSERT);
+                    intent.setData( CalendarContract.Events.CONTENT_URI );
+                    intent.putExtra( CalendarContract.Events.TITLE,titulo.getText().toString());
+                    intent.putExtra( CalendarContract.Events.ALL_DAY, "true" );
+                    //     intent.putExtra( Intent.EXTRA_EMAIL,"" );
+
+                    if(intent.resolveActivity( getPackageManager() )!=null){
+                        startActivity(intent );
+                    }else {
+                        Toast.makeText( DiaHorario.this, "Esta app no soporta esta acción",Toast.LENGTH_SHORT ).show();
+                    }
+                }
             }
-        });
-        btnShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent= new Intent(Intent.ACTION_SEND);
-                myIntent.setType("text/plain");
-                String shareBody="your body here";
-                String shareSub="your Subject here";
-                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
-                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
-                startActivity(Intent.createChooser(myIntent,"Share using"));
-            }
-        });
-        btnCali.setOnClickListener(new View.OnClickListener() {
+        } );
+
+        btnstar=findViewById(R.id.imageStar);
+        btnstar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(DiaHorario.this, Stars.class);
                 startActivity(intent);
-            }
-        });
-        btnIrCalen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(DiaHorario.this, Calendar.class);
-                startActivity(intent);
+
             }
         });
     }
-
     @Override
-    public void onClick(View v) {
-        if (v==EditFecha){
-            final Calendar c=Calendar.getInstance();
-            dia=c.get(Calendar.DAY_OF_MONTH);
-            mes=c.get(Calendar.MONTH);
-            anio=c.get(Calendar.YEAR);
-            DatePickerDialog datePickerDialog=new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                    txtFecha.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
-
-                }
-            },anio,mes,dia);
-            datePickerDialog.show();
-        }if (v==EditHora){
-            final Calendar c=Calendar.getInstance();
-            hora=c.get(Calendar.HOUR_OF_DAY);
-            minutos=c.get(Calendar.MINUTE);
-            TimePickerDialog timePickerDialog=new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-                @Override
-                public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                    txtHora.setText(hourOfDay+":"+minute);
-                }
-            },hora,minutos,false);
-            timePickerDialog.show();
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id= item.getItemId();
+        if (id==R.id.atrás) {
+            Intent intent = new Intent(DiaHorario.this,Pedidos.class);
+            startActivity(intent);
+            return true;
         }
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id=item.getItemId();
-        if(item.getItemId()==android.R.id.home){
-
+        if (id==R.id.salir) {
+            Intent intent = new Intent(DiaHorario.this,MainActivity.class);
+            startActivity(intent);
             finish();
+            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
 }
